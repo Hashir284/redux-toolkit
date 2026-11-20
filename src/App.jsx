@@ -7,11 +7,11 @@ import { useDispatch, useSelector } from 'react-redux'
 
 function App() {
   const dispatch = useDispatch()
-  const selector = useSelector()
+  const selector = useSelector(state=> state.counter.counterValue)
   return (
     <div>
       <button onClick={()=>dispatch((state=>state.counter))}>+</button>
-      <div></div>
+      <div>{selector}</div>
       {/* <button onClick={()=>dispatch()}>-</button>
       <button onClick={()=>selector()}></button> */}
     </div>
